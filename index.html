@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>Renegade Project</title>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<meta name="description" content="Renegade Project" />
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0" />
+		<link rel="stylesheet" href="/res/vue.css" />
+		<style>
+			.markdown-section{
+				max-width:100%;
+				margin:unset;
+				padding:0px 15px 40px;
+			}
+			.content{
+				padding-top:0px;
+			}
+			.beian{
+				position: fixed;
+				right: 0px;
+				bottom: 0px;
+				margin: 8px;
+			}
+			.beian a{
+				text-decoration: none;
+				color: gray;
+			}
+			.beian div{
+				text-align: center;
+			}
+			.beian img{
+				vertical-align: middle;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app"></div>
+		<script language="javascript" src="/res/edit-on-github.js"></script>
+		<script language="javascript">
+			const github="https://github.com/edk2-porting/";
+			const repo=github+"renegade-project.org/";
+			window.$docsify={
+				name:'Renegade Project',
+				repo:github,
+				loadSidebar: true,
+				plugins: [
+					EditOnGithubPlugin.create(
+						repo+"blob/master/",
+						null,null
+					)
+				]
+			}
+		</script>
+		<script language="javascript" src="/res/docsify.js"></script>
+	</body>
+	<script language="javascript">
+		if(document.domain==="renegade-project.cn"){
+			let beian=document.createElement("div");
+			beian.setAttribute("class","beian");
+			let d1=document.createElement("div");
+			let d2=document.createElement("div");
+			let l1=document.createElement("a");
+			let l2=document.createElement("a");
+			let img=document.createElement("img");
+			l1.href="http://beian.miit.gov.cn/";
+			l1.innerText="闽ICP备2021000369号-3"
+			l2.href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=35052102000381";
+			l2.innerText="闽公网安备 35052102000381号";
+			img.src="/res/beian.png";
+			d1.appendChild(l1);
+			d2.appendChild(img);
+			d2.appendChild(l2);
+			beian.appendChild(d1);
+			beian.appendChild(d2);
+			document.body.appendChild(beian);
+		}
+	</script>
+</html>
